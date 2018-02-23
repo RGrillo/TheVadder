@@ -1,0 +1,66 @@
+﻿@model Vadder.Models.KioskDepartment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KioskDepartment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KdName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KdName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KioskId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KioskId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KdCreateBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KdCreateBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KdModifyBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KdModifyBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KdCreateUTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KdCreateUTC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KdModifyUTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KdModifyUTC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KdId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

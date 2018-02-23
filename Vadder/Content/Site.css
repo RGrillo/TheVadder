@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* ADDED EXTRA SMALL BTN */
+.btn-group-xs > .btn, .btn-xs {
+    padding: .30rem .5rem;
+    font-size: .875rem;
+    line-height: .5;
+    border-radius: .2rem;
+}

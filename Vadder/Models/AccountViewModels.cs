@@ -79,6 +79,24 @@ namespace Vadder.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        //---------------------------------------------------
+
+        [Display(Name = "First Name")]
+        [MaxLength(100)]
+        public string kuFirstName { get; set; }
+
+
+        [Display(Name = "Last Name")]
+        [MaxLength(100)]
+        public string kuLastName { get; set; }
+
+        public int KdId { get; set; }
+
+
+        
+
+        public virtual KioskDepartment KioskDepartment { get; set; }
     }
 
     public class ResetPasswordViewModel

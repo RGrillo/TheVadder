@@ -191,17 +191,29 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KioskDepartmentsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802231653410_AddKioskDepartment.cs" />
+    <Compile Include="Migrations\201802231653410_AddKioskDepartment.Designer.cs">
+      <DependentUpon>201802231653410_AddKioskDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802231708266_AddFullNameAndKdIdToUsers.cs" />
+    <Compile Include="Migrations\201802231708266_AddFullNameAndKdIdToUsers.Designer.cs">
+      <DependentUpon>201802231708266_AddFullNameAndKdIdToUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\KioskDepartment.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-flatly.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -258,6 +270,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\KioskDepartments\Create.cshtml" />
+    <Content Include="Views\KioskDepartments\Delete.cshtml" />
+    <Content Include="Views\KioskDepartments\Details.cshtml" />
+    <Content Include="Views\KioskDepartments\Edit.cshtml" />
+    <Content Include="Views\KioskDepartments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,6 +291,14 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201802231653410_AddKioskDepartment.resx">
+      <DependentUpon>201802231653410_AddKioskDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802231708266_AddFullNameAndKdIdToUsers.resx">
+      <DependentUpon>201802231708266_AddFullNameAndKdIdToUsers.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

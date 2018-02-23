@@ -15,6 +15,7 @@ namespace Vadder.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -133,12 +134,13 @@ namespace Vadder.Controllers
                     return View(model);
             }
         }
-
+        
         //
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.KdId = new SelectList(db.KioskDepartments, "KdId", "KdName");
             return View();
         }
 
@@ -151,7 +153,14 @@ namespace Vadder.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    kuFirstName = model.kuFirstName,
+                    kuLastName = model.kuLastName,
+                    KdId = model.KdId
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
